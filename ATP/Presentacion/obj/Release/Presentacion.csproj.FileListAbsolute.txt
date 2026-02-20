@@ -1,0 +1,10 @@
+C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\bin\Release\Presentacion.exe.config
+C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\bin\Release\Presentacion.exe
+C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\bin\Release\Presentacion.pdb
+C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Release\Presentacion.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Release\Presentacion.MiPrimerFormulario.resources
+C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Release\Presentacion.Properties.Resources.resources
+C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Release\Presentacion.csproj.GenerateResource.cache
+C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Release\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Release\Presentacion.exe
+C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Release\Presentacion.pdb

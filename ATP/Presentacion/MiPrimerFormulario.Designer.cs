@@ -49,18 +49,22 @@
             this.label6 = new System.Windows.Forms.Label();
             this.TbEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.ListaCajaNombre = new System.Windows.Forms.ListBox();
             this.ListaCajaPDF = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.BtnPdf = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // AniadirBoton
             // 
-            this.AniadirBoton.Location = new System.Drawing.Point(35, 359);
+            this.AniadirBoton.Location = new System.Drawing.Point(61, 402);
             this.AniadirBoton.Margin = new System.Windows.Forms.Padding(4);
             this.AniadirBoton.Name = "AniadirBoton";
             this.AniadirBoton.Size = new System.Drawing.Size(163, 60);
@@ -71,7 +75,7 @@
             // 
             // ActualizarBoton
             // 
-            this.ActualizarBoton.Location = new System.Drawing.Point(205, 359);
+            this.ActualizarBoton.Location = new System.Drawing.Point(231, 402);
             this.ActualizarBoton.Margin = new System.Windows.Forms.Padding(4);
             this.ActualizarBoton.Name = "ActualizarBoton";
             this.ActualizarBoton.Size = new System.Drawing.Size(163, 60);
@@ -82,7 +86,7 @@
             // 
             // ReporteBoton
             // 
-            this.ReporteBoton.Location = new System.Drawing.Point(547, 359);
+            this.ReporteBoton.Location = new System.Drawing.Point(573, 402);
             this.ReporteBoton.Margin = new System.Windows.Forms.Padding(4);
             this.ReporteBoton.Name = "ReporteBoton";
             this.ReporteBoton.Size = new System.Drawing.Size(163, 60);
@@ -93,7 +97,7 @@
             // 
             // EliminarBoton
             // 
-            this.EliminarBoton.Location = new System.Drawing.Point(376, 359);
+            this.EliminarBoton.Location = new System.Drawing.Point(402, 402);
             this.EliminarBoton.Margin = new System.Windows.Forms.Padding(4);
             this.EliminarBoton.Name = "EliminarBoton";
             this.EliminarBoton.Size = new System.Drawing.Size(163, 60);
@@ -104,7 +108,7 @@
             // 
             // SalirBoton
             // 
-            this.SalirBoton.Location = new System.Drawing.Point(717, 359);
+            this.SalirBoton.Location = new System.Drawing.Point(743, 402);
             this.SalirBoton.Margin = new System.Windows.Forms.Padding(4);
             this.SalirBoton.Name = "SalirBoton";
             this.SalirBoton.Size = new System.Drawing.Size(163, 60);
@@ -116,7 +120,7 @@
             // 
             this.codigoLabel.AutoSize = true;
             this.codigoLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.codigoLabel.Location = new System.Drawing.Point(46, 40);
+            this.codigoLabel.Location = new System.Drawing.Point(75, 77);
             this.codigoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.codigoLabel.Name = "codigoLabel";
             this.codigoLabel.Size = new System.Drawing.Size(29, 16);
@@ -125,7 +129,7 @@
             // 
             // TbCuil
             // 
-            this.TbCuil.Location = new System.Drawing.Point(82, 34);
+            this.TbCuil.Location = new System.Drawing.Point(111, 71);
             this.TbCuil.Margin = new System.Windows.Forms.Padding(4);
             this.TbCuil.Name = "TbCuil";
             this.TbCuil.Size = new System.Drawing.Size(132, 22);
@@ -133,7 +137,7 @@
             // 
             // TbNombre
             // 
-            this.TbNombre.Location = new System.Drawing.Point(82, 72);
+            this.TbNombre.Location = new System.Drawing.Point(111, 109);
             this.TbNombre.Margin = new System.Windows.Forms.Padding(4);
             this.TbNombre.Name = "TbNombre";
             this.TbNombre.Size = new System.Drawing.Size(283, 22);
@@ -143,7 +147,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label1.Location = new System.Drawing.Point(19, 78);
+            this.label1.Location = new System.Drawing.Point(48, 115);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 16);
@@ -157,7 +161,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label2.Location = new System.Drawing.Point(75, 78);
+            this.label2.Location = new System.Drawing.Point(104, 115);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 41);
@@ -167,7 +171,7 @@
             // 
             this.ListaCaja.FormattingEnabled = true;
             this.ListaCaja.ItemHeight = 16;
-            this.ListaCaja.Location = new System.Drawing.Point(434, 92);
+            this.ListaCaja.Location = new System.Drawing.Point(460, 135);
             this.ListaCaja.Margin = new System.Windows.Forms.Padding(4);
             this.ListaCaja.Name = "ListaCaja";
             this.ListaCaja.Size = new System.Drawing.Size(105, 228);
@@ -178,7 +182,7 @@
             // 
             this.ListaCajaEmail.FormattingEnabled = true;
             this.ListaCajaEmail.ItemHeight = 16;
-            this.ListaCajaEmail.Location = new System.Drawing.Point(660, 92);
+            this.ListaCajaEmail.Location = new System.Drawing.Point(686, 135);
             this.ListaCajaEmail.Margin = new System.Windows.Forms.Padding(4);
             this.ListaCajaEmail.Name = "ListaCajaEmail";
             this.ListaCajaEmail.Size = new System.Drawing.Size(126, 228);
@@ -189,7 +193,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label3.Location = new System.Drawing.Point(431, 72);
+            this.label3.Location = new System.Drawing.Point(457, 115);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 16);
@@ -201,7 +205,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label4.Location = new System.Drawing.Point(544, 72);
+            this.label4.Location = new System.Drawing.Point(570, 115);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 16);
@@ -214,7 +218,7 @@
             this.groupBox1.Controls.Add(this.TbBusca);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(35, 240);
+            this.groupBox1.Location = new System.Drawing.Point(61, 283);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -264,7 +268,7 @@
             // 
             // TbEmail
             // 
-            this.TbEmail.Location = new System.Drawing.Point(82, 115);
+            this.TbEmail.Location = new System.Drawing.Point(111, 152);
             this.TbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TbEmail.Name = "TbEmail";
             this.TbEmail.Size = new System.Drawing.Size(283, 22);
@@ -274,28 +278,18 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label7.Location = new System.Drawing.Point(26, 115);
+            this.label7.Location = new System.Drawing.Point(55, 152);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 16);
             this.label7.TabIndex = 18;
             this.label7.Text = "Email";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(82, 157);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(286, 51);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label8.Location = new System.Drawing.Point(40, 174);
+            this.label8.Location = new System.Drawing.Point(69, 211);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 16);
@@ -306,7 +300,7 @@
             // 
             this.ListaCajaNombre.FormattingEnabled = true;
             this.ListaCajaNombre.ItemHeight = 16;
-            this.ListaCajaNombre.Location = new System.Drawing.Point(547, 92);
+            this.ListaCajaNombre.Location = new System.Drawing.Point(573, 135);
             this.ListaCajaNombre.Margin = new System.Windows.Forms.Padding(4);
             this.ListaCajaNombre.Name = "ListaCajaNombre";
             this.ListaCajaNombre.Size = new System.Drawing.Size(105, 228);
@@ -316,7 +310,7 @@
             // 
             this.ListaCajaPDF.FormattingEnabled = true;
             this.ListaCajaPDF.ItemHeight = 16;
-            this.ListaCajaPDF.Location = new System.Drawing.Point(794, 94);
+            this.ListaCajaPDF.Location = new System.Drawing.Point(820, 137);
             this.ListaCajaPDF.Margin = new System.Windows.Forms.Padding(4);
             this.ListaCajaPDF.Name = "ListaCajaPDF";
             this.ListaCajaPDF.Size = new System.Drawing.Size(126, 228);
@@ -327,7 +321,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label9.Location = new System.Drawing.Point(657, 72);
+            this.label9.Location = new System.Drawing.Point(683, 115);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 16);
@@ -339,12 +333,47 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label10.Location = new System.Drawing.Point(791, 72);
+            this.label10.Location = new System.Drawing.Point(817, 115);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 16);
             this.label10.TabIndex = 27;
             this.label10.Text = "Link PDF";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Presentacion.Properties.Resources.full_logo_atp;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(800, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(179, 75);
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Noto Sans JP", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(454, 34);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(285, 34);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Sistema Adjunto Masivo";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // BtnPdf
+            // 
+            this.BtnPdf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnPdf.Location = new System.Drawing.Point(110, 201);
+            this.BtnPdf.Name = "BtnPdf";
+            this.BtnPdf.Size = new System.Drawing.Size(284, 36);
+            this.BtnPdf.TabIndex = 30;
+            this.BtnPdf.Text = "PDF";
+            this.BtnPdf.UseVisualStyleBackColor = true;
+            this.BtnPdf.Click += new System.EventHandler(this.BtnPdf_Click);
             // 
             // MiPrimerFormulario
             // 
@@ -352,13 +381,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(935, 450);
+            this.ClientSize = new System.Drawing.Size(991, 485);
+            this.Controls.Add(this.BtnPdf);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.ListaCajaPDF);
             this.Controls.Add(this.ListaCajaNombre);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.TbEmail);
             this.Controls.Add(this.label2);
@@ -380,9 +411,10 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MiPrimerFormulario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ElectroCasa: Sistema de Gestion";
+            this.Text = "ATP Sistema Adjunto Masivo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,11 +443,14 @@
         private System.Windows.Forms.TextBox TbBusca;
         private System.Windows.Forms.TextBox TbEmail;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ListBox ListaCajaNombre;
         private System.Windows.Forms.ListBox ListaCajaPDF;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button BtnPdf;
     }
 }

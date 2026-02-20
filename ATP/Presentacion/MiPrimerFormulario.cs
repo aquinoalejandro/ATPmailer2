@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -39,6 +41,7 @@ namespace Presentacion
 
             TbCuil.Text = string.Empty;
             TbNombre.Text = string.Empty;
+            TbEmail.Text = string.Empty;
             TbCuil.Select();
         }
 
@@ -48,9 +51,10 @@ namespace Presentacion
             if (ListaCaja.SelectedIndex >= 0)
             {
                 int indexSeleccionado = ListaCaja.SelectedIndex;
-                ListaCajaEmail.SelectedIndex = indexSeleccionado;
+                ListaCaja.SelectedIndex = indexSeleccionado;
                 TbCuil.Text = ListaCaja.Items[indexSeleccionado].ToString();
-                TbNombre.Text = ListaCajaEmail.Items[indexSeleccionado].ToString();
+                TbNombre.Text = ListaCajaNombre.Items[indexSeleccionado].ToString();
+                TbEmail.Text = ListaCajaEmail.Items[indexSeleccionado].ToString();
             }
             else
             {
@@ -67,12 +71,35 @@ namespace Presentacion
             if (ListaCaja.Items.Contains(TbCuil.Text))
             {
                 int idItem = ListaCaja.Items.IndexOf(TbCuil.Text);
+                string email = TbEmail.Text;
+                string nombre = TbNombre.Text;
+                string cuil = TbCuil.Text;
 
-                if (TbNombre.Text != string.Empty)
+
+                if (TbNombre.Text != string.Empty || TbCuil.Text != string.Empty || TbEmail.Text != string.Empty)
                 {
-                    ListaCajaEmail.Items[idItem] = TbNombre.Text;
+                    ListaCajaEmail.Items[idItem] = TbEmail.Text;
+                    ListaCajaNombre.Items[idItem] = TbNombre.Text;
+                    ListaCaja.Items[idItem] = TbCuil.Text;
 
-                    MessageBox.Show("Se han actualizado los datos de '" + TbCuil.Text + "'.");
+                    string[] cambios = { };
+                    if (email != TbEmail.Text)
+                    {
+                        cambios.Append(TbNombre.Name);
+                    }
+                    else if (nombre != TbNombre.Text)
+                    {
+                        cambios.Append(TbCuil.Name);
+                    }
+                    else if (cuil != TbCuil.Text)
+                    {
+                        cambios.Append(TbEmail.Name);
+                    }
+
+
+
+
+                    MessageBox.Show("Se han actualizado los datos de '" + cambios  + "'.");
                 }
                 else
                 {
@@ -114,24 +141,31 @@ namespace Presentacion
                     int idItem = indices[0];
                     ListaCaja.SelectedIndex = idItem;
                     ListaCajaEmail.SelectedIndex = idItem;
+                    ListaCajaNombre.SelectedIndex = idItem;
+                    ListaCajaPDF.SelectedIndex = idItem;
 
                     TbCuil.Text = ListaCaja.Items[idItem].ToString();
-                    TbNombre.Text = ListaCajaEmail.Items[idItem].ToString();
+                    TbNombre.Text = ListaCajaNombre.Items[idItem].ToString();
+                    TbEmail.Text = ListaCajaEmail.Items[idItem].ToString();
+                   
 
                     label6.Text = indices.Count.ToString();
                 }
                 else
                 {
-                    indices = BuscarEnListaParcial(ListaCajaEmail, TbBusca.Text);
+                    indices = BuscarEnListaParcial(ListaCajaNombre, TbBusca.Text);
 
                     if (indices.Count > 0)
                     {
                         int idItem = indices[0];
                         ListaCaja.SelectedIndex = idItem;
                         ListaCajaEmail.SelectedIndex = idItem;
+                        ListaCajaNombre.SelectedIndex = idItem;
+                        ListaCajaPDF.SelectedIndex = idItem;
 
                         TbCuil.Text = ListaCaja.Items[idItem].ToString();
-                        TbNombre.Text = ListaCajaEmail.Items[idItem].ToString();
+                        TbNombre.Text = ListaCajaNombre.Items[idItem].ToString();
+                        TbEmail.Text = ListaCajaEmail.Items[idItem].ToString();
 
                         label6.Text = indices.Count.ToString();
                     }
@@ -202,6 +236,22 @@ namespace Presentacion
 
         }
 
+        private void BtnPdf_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+       
+            openFileDialog1.Filter = "Archivos PDF (*.pdf)|*.pdf";
+            
+            openFileDialog1.DefaultExt = "pdf";
 
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string rutaArchivo = openFileDialog1.FileName;
+
+                /// Aca deberia haber logica de subida a DRIVE o a donde sea 
+                
+                MessageBox.Show("Seleccionaste: " + rutaArchivo);
+            }
+        }
     }
 }
