@@ -58,9 +58,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.BtnPdf = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SalirBoton = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // AniadirBoton
@@ -122,7 +124,7 @@
             // 
             this.codigoLabel.AutoSize = true;
             this.codigoLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.codigoLabel.Location = new System.Drawing.Point(75, 77);
+            this.codigoLabel.Location = new System.Drawing.Point(23, 28);
             this.codigoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.codigoLabel.Name = "codigoLabel";
             this.codigoLabel.Size = new System.Drawing.Size(29, 16);
@@ -131,15 +133,15 @@
             // 
             // TbCuil
             // 
-            this.TbCuil.Location = new System.Drawing.Point(111, 71);
+            this.TbCuil.Location = new System.Drawing.Point(102, 22);
             this.TbCuil.Margin = new System.Windows.Forms.Padding(4);
             this.TbCuil.Name = "TbCuil";
-            this.TbCuil.Size = new System.Drawing.Size(132, 22);
+            this.TbCuil.Size = new System.Drawing.Size(283, 22);
             this.TbCuil.TabIndex = 6;
             // 
             // TbNombre
             // 
-            this.TbNombre.Location = new System.Drawing.Point(111, 109);
+            this.TbNombre.Location = new System.Drawing.Point(102, 54);
             this.TbNombre.Margin = new System.Windows.Forms.Padding(4);
             this.TbNombre.Name = "TbNombre";
             this.TbNombre.Size = new System.Drawing.Size(283, 22);
@@ -149,7 +151,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label1.Location = new System.Drawing.Point(48, 115);
+            this.label1.Location = new System.Drawing.Point(22, 57);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 16);
@@ -189,6 +191,7 @@
             this.ListaCajaEmail.Name = "ListaCajaEmail";
             this.ListaCajaEmail.Size = new System.Drawing.Size(126, 228);
             this.ListaCajaEmail.TabIndex = 11;
+            this.ListaCajaEmail.SelectedIndexChanged += new System.EventHandler(this.ListaCajaEmail_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -270,7 +273,7 @@
             // 
             // TbEmail
             // 
-            this.TbEmail.Location = new System.Drawing.Point(111, 152);
+            this.TbEmail.Location = new System.Drawing.Point(102, 85);
             this.TbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TbEmail.Name = "TbEmail";
             this.TbEmail.Size = new System.Drawing.Size(283, 22);
@@ -280,7 +283,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label7.Location = new System.Drawing.Point(55, 152);
+            this.label7.Location = new System.Drawing.Point(23, 85);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 16);
@@ -291,7 +294,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label8.Location = new System.Drawing.Point(69, 211);
+            this.label8.Location = new System.Drawing.Point(26, 125);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 16);
@@ -307,6 +310,7 @@
             this.ListaCajaNombre.Name = "ListaCajaNombre";
             this.ListaCajaNombre.Size = new System.Drawing.Size(105, 228);
             this.ListaCajaNombre.TabIndex = 24;
+            this.ListaCajaNombre.SelectedIndexChanged += new System.EventHandler(this.ListaCajaNombre_SelectedIndexChanged);
             // 
             // ListaCajaPDF
             // 
@@ -317,6 +321,7 @@
             this.ListaCajaPDF.Name = "ListaCajaPDF";
             this.ListaCajaPDF.Size = new System.Drawing.Size(257, 228);
             this.ListaCajaPDF.TabIndex = 25;
+            this.ListaCajaPDF.SelectedIndexChanged += new System.EventHandler(this.ListaCajaPDF_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -346,7 +351,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::Presentacion.Properties.Resources.full_logo_atp;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(898, 18);
+            this.pictureBox1.Location = new System.Drawing.Point(898, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(179, 75);
             this.pictureBox1.TabIndex = 28;
@@ -359,7 +364,7 @@
             this.label11.Cursor = System.Windows.Forms.Cursors.Default;
             this.label11.Font = new System.Drawing.Font("Noto Sans JP", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Navy;
-            this.label11.Location = new System.Drawing.Point(454, 38);
+            this.label11.Location = new System.Drawing.Point(55, 39);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(285, 34);
             this.label11.TabIndex = 29;
@@ -372,7 +377,7 @@
             // BtnPdf
             // 
             this.BtnPdf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnPdf.Location = new System.Drawing.Point(110, 201);
+            this.BtnPdf.Location = new System.Drawing.Point(101, 115);
             this.BtnPdf.Name = "BtnPdf";
             this.BtnPdf.Size = new System.Drawing.Size(284, 36);
             this.BtnPdf.TabIndex = 30;
@@ -380,15 +385,33 @@
             this.BtnPdf.UseVisualStyleBackColor = true;
             this.BtnPdf.Click += new System.EventHandler(this.BtnPdf_Click);
             // 
-            // button1
+            // SalirBoton
             // 
-            this.button1.Location = new System.Drawing.Point(914, 402);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 60);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Salir";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SalirBoton.Location = new System.Drawing.Point(914, 402);
+            this.SalirBoton.Margin = new System.Windows.Forms.Padding(4);
+            this.SalirBoton.Name = "SalirBoton";
+            this.SalirBoton.Size = new System.Drawing.Size(163, 60);
+            this.SalirBoton.TabIndex = 31;
+            this.SalirBoton.Text = "Salir";
+            this.SalirBoton.UseVisualStyleBackColor = true;
+            this.SalirBoton.Click += new System.EventHandler(this.SalirBoton_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.TbNombre);
+            this.groupBox2.Controls.Add(this.TbCuil);
+            this.groupBox2.Controls.Add(this.BtnPdf);
+            this.groupBox2.Controls.Add(this.TbEmail);
+            this.groupBox2.Controls.Add(this.codigoLabel);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Location = new System.Drawing.Point(52, 99);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(396, 164);
+            this.groupBox2.TabIndex = 32;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos del Contribuyente";
             // 
             // MiPrimerFormulario
             // 
@@ -397,27 +420,20 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1140, 485);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.BtnPdf);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.SalirBoton);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.ListaCajaPDF);
             this.Controls.Add(this.ListaCajaNombre);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.TbEmail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ListaCajaEmail);
             this.Controls.Add(this.ListaCaja);
-            this.Controls.Add(this.TbNombre);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.TbCuil);
-            this.Controls.Add(this.codigoLabel);
             this.Controls.Add(this.ImportarBoton);
             this.Controls.Add(this.EliminarBoton);
             this.Controls.Add(this.ReporteBoton);
@@ -431,6 +447,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,6 +486,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button BtnPdf;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SalirBoton;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

@@ -19,3 +19,14 @@ C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Debug\Pr
 C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
 C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Debug\Presentacion.exe.config
+C:\Users\ASUS\Desktop\Nueva carpeta\ATPmailer2\ATP\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\ASUS\Desktop\Nueva carpeta\ATPmailer2\ATP\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\ASUS\Desktop\Nueva carpeta\ATPmailer2\ATP\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\ASUS\Desktop\Nueva carpeta\ATPmailer2\ATP\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\Nueva carpeta\ATPmailer2\ATP\Presentacion\obj\Debug\Presentacion.exe.config
+C:\Users\ASUS\Desktop\Nueva carpeta\ATPmailer2\ATP\Presentacion\obj\Debug\Presentacion.MiPrimerFormulario.resources
+C:\Users\ASUS\Desktop\Nueva carpeta\ATPmailer2\ATP\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\ASUS\Desktop\Nueva carpeta\ATPmailer2\ATP\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\ASUS\Desktop\Nueva carpeta\ATPmailer2\ATP\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Nueva carpeta\ATPmailer2\ATP\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\ASUS\Desktop\Nueva carpeta\ATPmailer2\ATP\Presentacion\obj\Debug\Presentacion.pdb

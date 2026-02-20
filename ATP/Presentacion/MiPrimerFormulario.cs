@@ -53,9 +53,14 @@ namespace Presentacion
             {
                 int indexSeleccionado = ListaCaja.SelectedIndex;
                 ListaCaja.SelectedIndex = indexSeleccionado;
+                ListaCajaEmail.SelectedIndex = indexSeleccionado;
+                ListaCajaNombre.SelectedIndex = indexSeleccionado;
+                ListaCajaPDF.SelectedIndex = indexSeleccionado;
+
                 TbCuil.Text = ListaCaja.Items[indexSeleccionado].ToString();
                 TbNombre.Text = ListaCajaNombre.Items[indexSeleccionado].ToString();
                 TbEmail.Text = ListaCajaEmail.Items[indexSeleccionado].ToString();
+                BtnPdf.Text = ListaCajaPDF.Items[indexSeleccionado].ToString();
             }
             else
             {
@@ -64,6 +69,81 @@ namespace Presentacion
 
 
         }
+
+        private void ListaCajaEmail_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListaCajaEmail.SelectedIndex >= 0)
+            {
+                int indexSeleccionado = ListaCajaEmail.SelectedIndex;
+                ListaCaja.SelectedIndex = indexSeleccionado;
+                ListaCajaEmail.SelectedIndex = indexSeleccionado;
+                ListaCajaNombre.SelectedIndex = indexSeleccionado;
+                ListaCajaPDF.SelectedIndex = indexSeleccionado;
+
+                TbCuil.Text = ListaCaja.Items[indexSeleccionado].ToString();
+                TbNombre.Text = ListaCajaNombre.Items[indexSeleccionado].ToString();
+                TbEmail.Text = ListaCajaEmail.Items[indexSeleccionado].ToString();
+                BtnPdf.Text = ListaCajaPDF.Items[indexSeleccionado].ToString();
+            }
+            else
+            {
+                Console.WriteLine("Ya no tenemos seleccionado nada.");
+            }
+
+
+        }
+
+        private void ListaCajaNombre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListaCajaNombre.SelectedIndex >= 0)
+            {
+                int indexSeleccionado = ListaCajaNombre.SelectedIndex;
+                ListaCaja.SelectedIndex = indexSeleccionado;
+                ListaCajaEmail.SelectedIndex = indexSeleccionado;
+                ListaCajaNombre.SelectedIndex = indexSeleccionado;
+                ListaCajaPDF.SelectedIndex = indexSeleccionado;
+
+                TbCuil.Text = ListaCaja.Items[indexSeleccionado].ToString();
+                TbNombre.Text = ListaCajaNombre.Items[indexSeleccionado].ToString();
+                TbEmail.Text = ListaCajaEmail.Items[indexSeleccionado].ToString();
+                BtnPdf.Text = ListaCajaPDF.Items[indexSeleccionado].ToString();
+            }
+            else
+            {
+                Console.WriteLine("Ya no tenemos seleccionado nada.");
+            }
+
+
+        }
+
+        private void ListaCajaPDF_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListaCajaPDF.SelectedIndex >= 0)
+            {
+                int indexSeleccionado = ListaCajaPDF.SelectedIndex;
+                ListaCaja.SelectedIndex = indexSeleccionado;
+                ListaCajaEmail.SelectedIndex = indexSeleccionado;
+                ListaCajaNombre.SelectedIndex = indexSeleccionado;
+                ListaCajaPDF.SelectedIndex = indexSeleccionado;
+
+                TbCuil.Text = ListaCaja.Items[indexSeleccionado].ToString();
+                TbNombre.Text = ListaCajaNombre.Items[indexSeleccionado].ToString();
+                TbEmail.Text = ListaCajaEmail.Items[indexSeleccionado].ToString();
+                BtnPdf.Text = ListaCajaPDF.Items[indexSeleccionado].ToString();
+            }
+            else
+            {
+                Console.WriteLine("Ya no tenemos seleccionado nada.");
+            }
+
+
+        }
+
+
+
+
+
+
 
 
 
@@ -174,14 +254,34 @@ namespace Presentacion
                     }
                     else
                     {
-                        MessageBox.Show("No se ha encontrado ningún resultado.");
-                        label6.Text = "0";
+                        indices = BuscarEnListaParcial(ListaCajaEmail, TbBusca.Text);
+
+                        if (indices.Count > 0)
+                        {
+                            int idItem = indices[0];
+                            ListaCaja.SelectedIndex = idItem;
+                            ListaCajaEmail.SelectedIndex = idItem;
+                            ListaCajaNombre.SelectedIndex = idItem;
+                            ListaCajaPDF.SelectedIndex = idItem;
+
+                            TbCuil.Text = ListaCaja.Items[idItem].ToString();
+                            TbNombre.Text = ListaCajaNombre.Items[idItem].ToString();
+                            TbEmail.Text = ListaCajaEmail.Items[idItem].ToString();
+
+                            label6.Text = indices.Count.ToString();
+                        }
+                        else{
+                            MessageBox.Show("No se ha encontrado ningún resultado.");
+                            label6.Text = "0";
+
+                        }
+
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Ingrese un código o una descripción");
+                MessageBox.Show("Ingrese un Cuil o un Nombre");
                 label6.Text = "0";
             }
         }
@@ -401,6 +501,11 @@ namespace Presentacion
                 campo = campo.Replace("\"\"", "\"");
             }
             return campo;
+        }
+
+        private void SalirBoton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
