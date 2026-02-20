@@ -18,3 +18,4 @@ C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Debug\Pr
 C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
 C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
 C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Nueva carpeta\ElectroCasa_CSharp\Presentacion\obj\Debug\Presentacion.exe.config

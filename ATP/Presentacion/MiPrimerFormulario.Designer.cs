@@ -32,7 +32,7 @@
             this.ActualizarBoton = new System.Windows.Forms.Button();
             this.ReporteBoton = new System.Windows.Forms.Button();
             this.EliminarBoton = new System.Windows.Forms.Button();
-            this.SalirBoton = new System.Windows.Forms.Button();
+            this.ImportarBoton = new System.Windows.Forms.Button();
             this.codigoLabel = new System.Windows.Forms.Label();
             this.TbCuil = new System.Windows.Forms.TextBox();
             this.TbNombre = new System.Windows.Forms.TextBox();
@@ -58,6 +58,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.BtnPdf = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +87,7 @@
             // 
             // ReporteBoton
             // 
-            this.ReporteBoton.Location = new System.Drawing.Point(573, 402);
+            this.ReporteBoton.Location = new System.Drawing.Point(743, 402);
             this.ReporteBoton.Margin = new System.Windows.Forms.Padding(4);
             this.ReporteBoton.Name = "ReporteBoton";
             this.ReporteBoton.Size = new System.Drawing.Size(163, 60);
@@ -106,15 +107,16 @@
             this.EliminarBoton.UseVisualStyleBackColor = true;
             this.EliminarBoton.Click += new System.EventHandler(this.EliminarBoton_Click);
             // 
-            // SalirBoton
+            // ImportarBoton
             // 
-            this.SalirBoton.Location = new System.Drawing.Point(743, 402);
-            this.SalirBoton.Margin = new System.Windows.Forms.Padding(4);
-            this.SalirBoton.Name = "SalirBoton";
-            this.SalirBoton.Size = new System.Drawing.Size(163, 60);
-            this.SalirBoton.TabIndex = 4;
-            this.SalirBoton.Text = "Salir";
-            this.SalirBoton.UseVisualStyleBackColor = true;
+            this.ImportarBoton.Location = new System.Drawing.Point(572, 402);
+            this.ImportarBoton.Margin = new System.Windows.Forms.Padding(4);
+            this.ImportarBoton.Name = "ImportarBoton";
+            this.ImportarBoton.Size = new System.Drawing.Size(163, 60);
+            this.ImportarBoton.TabIndex = 4;
+            this.ImportarBoton.Text = "Importar CSV";
+            this.ImportarBoton.UseVisualStyleBackColor = true;
+            this.ImportarBoton.Click += new System.EventHandler(this.ImportarBoton_Click);
             // 
             // codigoLabel
             // 
@@ -313,7 +315,7 @@
             this.ListaCajaPDF.Location = new System.Drawing.Point(820, 137);
             this.ListaCajaPDF.Margin = new System.Windows.Forms.Padding(4);
             this.ListaCajaPDF.Name = "ListaCajaPDF";
-            this.ListaCajaPDF.Size = new System.Drawing.Size(126, 228);
+            this.ListaCajaPDF.Size = new System.Drawing.Size(257, 228);
             this.ListaCajaPDF.TabIndex = 25;
             // 
             // label9
@@ -344,7 +346,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::Presentacion.Properties.Resources.full_logo_atp;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(800, 15);
+            this.pictureBox1.Location = new System.Drawing.Point(898, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(179, 75);
             this.pictureBox1.TabIndex = 28;
@@ -353,8 +355,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.Menu;
+            this.label11.Cursor = System.Windows.Forms.Cursors.Default;
             this.label11.Font = new System.Drawing.Font("Noto Sans JP", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(454, 34);
+            this.label11.ForeColor = System.Drawing.Color.Navy;
+            this.label11.Location = new System.Drawing.Point(454, 38);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(285, 34);
             this.label11.TabIndex = 29;
@@ -375,13 +380,24 @@
             this.BtnPdf.UseVisualStyleBackColor = true;
             this.BtnPdf.Click += new System.EventHandler(this.BtnPdf_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(914, 402);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(163, 60);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // MiPrimerFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(991, 485);
+            this.ClientSize = new System.Drawing.Size(1140, 485);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnPdf);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.pictureBox1);
@@ -402,7 +418,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TbCuil);
             this.Controls.Add(this.codigoLabel);
-            this.Controls.Add(this.SalirBoton);
+            this.Controls.Add(this.ImportarBoton);
             this.Controls.Add(this.EliminarBoton);
             this.Controls.Add(this.ReporteBoton);
             this.Controls.Add(this.ActualizarBoton);
@@ -426,7 +442,7 @@
         private System.Windows.Forms.Button ActualizarBoton;
         private System.Windows.Forms.Button ReporteBoton;
         private System.Windows.Forms.Button EliminarBoton;
-        private System.Windows.Forms.Button SalirBoton;
+        private System.Windows.Forms.Button ImportarBoton;
         private System.Windows.Forms.Label codigoLabel;
         private System.Windows.Forms.TextBox TbCuil;
         private System.Windows.Forms.TextBox TbNombre;
@@ -452,5 +468,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button BtnPdf;
+        private System.Windows.Forms.Button button1;
     }
 }

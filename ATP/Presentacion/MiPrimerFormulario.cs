@@ -42,6 +42,7 @@ namespace Presentacion
             TbCuil.Text = string.Empty;
             TbNombre.Text = string.Empty;
             TbEmail.Text = string.Empty;
+            BtnPdf.Text = "PDF";
             TbCuil.Select();
         }
 
@@ -119,6 +120,8 @@ namespace Presentacion
                 int idItem = ListaCaja.Items.IndexOf(TbCuil.Text);
 
                 ListaCaja.Items.RemoveAt(idItem);
+                ListaCajaNombre.Items.RemoveAt(idItem);
+                ListaCajaPDF.Items.RemoveAt(idItem);
                 ListaCajaEmail.Items.RemoveAt(idItem);
 
                 MessageBox.Show("El elemento se borró correctamente.");
@@ -250,8 +253,154 @@ namespace Presentacion
 
                 /// Aca deberia haber logica de subida a DRIVE o a donde sea 
                 
+                BtnPdf.Text = rutaArchivo;
+                
                 MessageBox.Show("Seleccionaste: " + rutaArchivo);
             }
+        }
+
+        private void ImportarBoton_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+                openFileDialog.Title = "Seleccionar archivo CSV";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = openFileDialog.FileName;
+
+                    // Preguntar si desea agregar o reemplazar
+                    DialogResult result = MessageBox.Show(
+                        "¿Desea agregar los datos a la lista existente?\n\nSí = Agregar\nNo = Reemplazar\nCancelar = Salir",
+                        "Importar CSV",
+                        MessageBoxButtons.YesNoCancel);
+
+                    if (result == DialogResult.Cancel)
+                        return;
+
+                    if (result == DialogResult.No)
+                    {
+                        // Limpiar todas las listas
+                        ListaCaja.Items.Clear();
+                        ListaCajaNombre.Items.Clear();
+                        ListaCajaEmail.Items.Clear();
+                        ListaCajaPDF.Items.Clear();
+                    }
+
+                    // Llamar al método de importación mejorado
+                    ImportarCSVManual(filePath);
+                }
+            }
+        }
+
+        private void ImportarCSVManual(string filePath)
+        {
+            try
+            {
+                // Leer todas las líneas del archivo
+                string[] lineas = File.ReadAllLines(filePath);
+
+                if (lineas.Length == 0)
+                {
+                    MessageBox.Show("El archivo está vacío.");
+                    return;
+                }
+
+                // La primera línea es el encabezado, la saltamos
+                for (int i = 1; i < lineas.Length; i++)
+                {
+                    string linea = lineas[i];
+
+                    // Ignorar líneas vacías
+                    if (string.IsNullOrWhiteSpace(linea))
+                        continue;
+
+                    // Parsear la línea respetando comillas
+                    List<string> campos = ParsearCSV(linea);
+
+                    // Debe tener al menos 4 campos
+                    if (campos.Count >= 4)
+                    {
+                        string cuil = campos[0].Trim();
+                        string nombre = campos[1].Trim();
+                        string email = campos[2].Trim();
+                        string pdf = campos[3].Trim();
+
+                        // Opcional: evitar CUIL vacío
+                        if (!string.IsNullOrEmpty(cuil))
+                        {
+                            ListaCaja.Items.Add(cuil);
+                            ListaCajaNombre.Items.Add(nombre);
+                            ListaCajaEmail.Items.Add(email);
+                            ListaCajaPDF.Items.Add(pdf);
+                        }
+                    }
+                    else
+                    {
+                        // Si una línea no tiene suficientes campos, puedes ignorarla o mostrar advertencia
+                        // MessageBox.Show($"Línea {i+1} ignorada por tener menos de 4 campos.");
+                    }
+                }
+
+                MessageBox.Show("Importación completada.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al importar el archivo: " + ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Parsea una línea de CSV respetando comillas dobles.
+        /// </summary>
+        private List<string> ParsearCSV(string linea)
+        {
+            List<string> campos = new List<string>();
+            bool dentroDeComillas = false;
+            int inicioCampo = 0;
+
+            for (int i = 0; i < linea.Length; i++)
+            {
+                char c = linea[i];
+
+                if (c == '"')
+                {
+                    // Alternar estado de comillas
+                    dentroDeComillas = !dentroDeComillas;
+                }
+                else if (c == ',' && !dentroDeComillas)
+                {
+                    // Fin de campo
+                    string campo = linea.Substring(inicioCampo, i - inicioCampo);
+                    // Limpiar comillas dobles alrededor del campo si las hay
+                    campo = LimpiarCampo(campo);
+                    campos.Add(campo);
+                    inicioCampo = i + 1;
+                }
+            }
+
+            // Último campo
+            string ultimoCampo = linea.Substring(inicioCampo);
+            ultimoCampo = LimpiarCampo(ultimoCampo);
+            campos.Add(ultimoCampo);
+
+            return campos;
+        }
+
+        /// <summary>
+        /// Elimina comillas dobles al inicio y final si existen, y reemplaza comillas dobles escapadas.
+        /// </summary>
+        private string LimpiarCampo(string campo)
+        {
+            campo = campo.Trim();
+            if (campo.Length >= 2 && campo[0] == '"' && campo[campo.Length - 1] == '"')
+            {
+                campo = campo.Substring(1, campo.Length - 2);
+                // Reemplazar comillas dobles dobles ("" -> ") si están escapadas así
+                campo = campo.Replace("\"\"", "\"");
+            }
+            return campo;
         }
     }
 }
