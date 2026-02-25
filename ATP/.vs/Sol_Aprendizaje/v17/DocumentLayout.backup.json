@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\Nueva carpeta\\ATPmailer2\\ATP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{016A85CF-9528-4833-B22D-5239CEF7CF04}|Presentacion\\Presentacion.csproj|c:\\users\\asus\\desktop\\nueva carpeta\\atpmailer2\\atp\\presentacion\\miprimerformulario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{016A85CF-9528-4833-B22D-5239CEF7CF04}|Presentacion\\Presentacion.csproj|C:\\Users\\ASUS\\Desktop\\Nueva carpeta\\ATPmailer2\\ATP\\presentacion\\miprimerformulario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{016A85CF-9528-4833-B22D-5239CEF7CF04}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\miprimerformulario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{016A85CF-9528-4833-B22D-5239CEF7CF04}|Presentacion\\Presentacion.csproj|C:\\Users\\ASUS\\Desktop\\Nueva carpeta\\ATPmailer2\\ATP\\presentacion\\miprimerformulario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{016A85CF-9528-4833-B22D-5239CEF7CF04}|Presentacion\\Presentacion.csproj|c:\\users\\asus\\desktop\\nueva carpeta\\atpmailer2\\atp\\presentacion\\miprimerformulario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{016A85CF-9528-4833-B22D-5239CEF7CF04}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\miprimerformulario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Presentacion\\MiPrimerFormulario.Designer.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\Nueva carpeta\\ATPmailer2\\ATP\\Presentacion\\MiPrimerFormulario.Designer.cs",
               "RelativeToolTip": "Presentacion\\MiPrimerFormulario.Designer.cs",
-              "ViewState": "AgIAAHwBAAAAAAAAAAAqwIwBAABUAAAAAAAAAA==",
+              "ViewState": "AgIAAJcBAAAAAAAAAAAmwKgBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-19T22:58:44.441Z",
               "EditorCaption": ""
@@ -53,7 +53,7 @@
               "RelativeDocumentMoniker": "Presentacion\\MiPrimerFormulario.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\Nueva carpeta\\ATPmailer2\\ATP\\Presentacion\\MiPrimerFormulario.cs",
               "RelativeToolTip": "Presentacion\\MiPrimerFormulario.cs",
-              "ViewState": "AgIAACkBAAAAAAAAAAAswPsBAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAmwLwAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-19T22:58:23.896Z",
               "EditorCaption": ""

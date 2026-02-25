@@ -57,9 +57,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.BtnPdf = new System.Windows.Forms.Button();
             this.SalirBoton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.TbDeuda = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -223,11 +224,11 @@
             this.groupBox1.Controls.Add(this.TbBusca);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(61, 283);
+            this.groupBox1.Location = new System.Drawing.Point(54, 293);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(389, 100);
+            this.groupBox1.Size = new System.Drawing.Size(398, 100);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda";
@@ -294,12 +295,12 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label8.Location = new System.Drawing.Point(26, 125);
+            this.label8.Location = new System.Drawing.Point(22, 118);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 16);
+            this.label8.Size = new System.Drawing.Size(62, 16);
             this.label8.TabIndex = 23;
-            this.label8.Text = "PDF";
+            this.label8.Text = "Deuda Id";
             // 
             // ListaCajaNombre
             // 
@@ -322,6 +323,7 @@
             this.ListaCajaPDF.Size = new System.Drawing.Size(257, 228);
             this.ListaCajaPDF.TabIndex = 25;
             this.ListaCajaPDF.SelectedIndexChanged += new System.EventHandler(this.ListaCajaPDF_SelectedIndexChanged);
+            this.ListaCajaPDF.DoubleClick += new System.EventHandler(this.ListaCajaPDF_DoubleClick);
             // 
             // label9
             // 
@@ -374,17 +376,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // BtnPdf
-            // 
-            this.BtnPdf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnPdf.Location = new System.Drawing.Point(101, 115);
-            this.BtnPdf.Name = "BtnPdf";
-            this.BtnPdf.Size = new System.Drawing.Size(284, 36);
-            this.BtnPdf.TabIndex = 30;
-            this.BtnPdf.Text = "PDF";
-            this.BtnPdf.UseVisualStyleBackColor = true;
-            this.BtnPdf.Click += new System.EventHandler(this.BtnPdf_Click);
-            // 
             // SalirBoton
             // 
             this.SalirBoton.Location = new System.Drawing.Point(914, 402);
@@ -398,9 +389,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.TbDeuda);
             this.groupBox2.Controls.Add(this.TbNombre);
             this.groupBox2.Controls.Add(this.TbCuil);
-            this.groupBox2.Controls.Add(this.BtnPdf);
             this.groupBox2.Controls.Add(this.TbEmail);
             this.groupBox2.Controls.Add(this.codigoLabel);
             this.groupBox2.Controls.Add(this.label1);
@@ -408,10 +400,28 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(52, 99);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(396, 164);
+            this.groupBox2.Size = new System.Drawing.Size(396, 150);
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Contribuyente";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label12.Location = new System.Drawing.Point(23, 152);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(0, 16);
+            this.label12.TabIndex = 25;
+            // 
+            // TbDeuda
+            // 
+            this.TbDeuda.Location = new System.Drawing.Point(102, 115);
+            this.TbDeuda.Margin = new System.Windows.Forms.Padding(4);
+            this.TbDeuda.Name = "TbDeuda";
+            this.TbDeuda.Size = new System.Drawing.Size(283, 22);
+            this.TbDeuda.TabIndex = 24;
             // 
             // MiPrimerFormulario
             // 
@@ -485,8 +495,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button BtnPdf;
         private System.Windows.Forms.Button SalirBoton;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox TbDeuda;
     }
 }

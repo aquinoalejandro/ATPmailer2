@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
@@ -9,13 +10,19 @@ namespace Presentacion
 {
     public partial class MiPrimerFormulario : Form
     {
+
         public MiPrimerFormulario()
         {
             InitializeComponent();
         }
 
+
+
+
         private void AniadirBoton_Click(object sender, EventArgs e)
         {
+            string urlLink = "http://localhost:3000/notificacion-deuda-pdf?cuil=" + TbCuil.Text + "&idDeuda=" + TbDeuda.Text;
+
             if ((TbCuil.Text != "") || (TbNombre.Text != ""))
             {
                 if (!ListaCaja.Items.Contains(TbCuil.Text))
@@ -23,7 +30,7 @@ namespace Presentacion
                     ListaCaja.Items.Add(TbCuil.Text);
                     ListaCajaEmail.Items.Add(TbEmail.Text);
                     ListaCajaNombre.Items.Add(TbNombre.Text);
-                    ListaCajaPDF.Items.Add("https://drive.google.com/file/d/1-1K8RZpV3CE8CVRS0E5o6JwaT3W2btu2/view?usp=sharing");
+                    ListaCajaPDF.Items.Add(urlLink);
 
                     MessageBox.Show("Datos guardados.");
                     Console.WriteLine("Index:" + ListaCajaEmail.Items.IndexOf(TbNombre.Text));
@@ -42,7 +49,7 @@ namespace Presentacion
             TbCuil.Text = string.Empty;
             TbNombre.Text = string.Empty;
             TbEmail.Text = string.Empty;
-            BtnPdf.Text = "PDF";
+            TbDeuda.Text = string.Empty;
             TbCuil.Select();
         }
 
@@ -60,7 +67,11 @@ namespace Presentacion
                 TbCuil.Text = ListaCaja.Items[indexSeleccionado].ToString();
                 TbNombre.Text = ListaCajaNombre.Items[indexSeleccionado].ToString();
                 TbEmail.Text = ListaCajaEmail.Items[indexSeleccionado].ToString();
-                BtnPdf.Text = ListaCajaPDF.Items[indexSeleccionado].ToString();
+
+
+                string url = ListaCajaPDF.Items[indexSeleccionado].ToString();
+                string baseUrl = "http://localhost:3000/notificacion-deuda-pdf?cuil=" + TbCuil.Text + "&idDeuda=";
+                TbDeuda.Text = url.Replace(baseUrl, "");
             }
             else
             {
@@ -83,7 +94,9 @@ namespace Presentacion
                 TbCuil.Text = ListaCaja.Items[indexSeleccionado].ToString();
                 TbNombre.Text = ListaCajaNombre.Items[indexSeleccionado].ToString();
                 TbEmail.Text = ListaCajaEmail.Items[indexSeleccionado].ToString();
-                BtnPdf.Text = ListaCajaPDF.Items[indexSeleccionado].ToString();
+                string url = ListaCajaPDF.Items[indexSeleccionado].ToString();
+                string baseUrl = "http://localhost:3000/notificacion-deuda-pdf?cuil=" + TbCuil.Text + "&idDeuda=";
+                TbDeuda.Text = url.Replace(baseUrl, "");
             }
             else
             {
@@ -106,7 +119,10 @@ namespace Presentacion
                 TbCuil.Text = ListaCaja.Items[indexSeleccionado].ToString();
                 TbNombre.Text = ListaCajaNombre.Items[indexSeleccionado].ToString();
                 TbEmail.Text = ListaCajaEmail.Items[indexSeleccionado].ToString();
-                BtnPdf.Text = ListaCajaPDF.Items[indexSeleccionado].ToString();
+                string url = ListaCajaPDF.Items[indexSeleccionado].ToString();
+                string baseUrl = "http://localhost:3000/notificacion-deuda-pdf?cuil=" + TbCuil.Text + "&idDeuda="; 
+                TbDeuda.Text = url.Replace(baseUrl, "");
+
             }
             else
             {
@@ -129,7 +145,10 @@ namespace Presentacion
                 TbCuil.Text = ListaCaja.Items[indexSeleccionado].ToString();
                 TbNombre.Text = ListaCajaNombre.Items[indexSeleccionado].ToString();
                 TbEmail.Text = ListaCajaEmail.Items[indexSeleccionado].ToString();
-                BtnPdf.Text = ListaCajaPDF.Items[indexSeleccionado].ToString();
+                string url = ListaCajaPDF.Items[indexSeleccionado].ToString();
+                string baseUrl = "http://localhost:3000/notificacion-deuda-pdf?cuil=" + TbCuil.Text + "&idDeuda=";
+                TbDeuda.Text = url.Replace(baseUrl, "");
+
             }
             else
             {
@@ -147,6 +166,8 @@ namespace Presentacion
 
 
 
+
+
         private void ActualizarBoton_Click(object sender, EventArgs e)
         {
             if (ListaCaja.Items.Contains(TbCuil.Text))
@@ -155,41 +176,32 @@ namespace Presentacion
                 string email = TbEmail.Text;
                 string nombre = TbNombre.Text;
                 string cuil = TbCuil.Text;
+                string url = "http://localhost:3000/notificacion-deuda-pdf?cuil=" + TbCuil.Text + "&idDeuda=" + TbDeuda.Text;
 
 
-                if (TbNombre.Text != string.Empty || TbCuil.Text != string.Empty || TbEmail.Text != string.Empty)
+                if (TbNombre.Text != string.Empty || TbCuil.Text != string.Empty || TbEmail.Text != string.Empty || TbDeuda.Text != string.Empty)
                 {
                     ListaCajaEmail.Items[idItem] = TbEmail.Text;
                     ListaCajaNombre.Items[idItem] = TbNombre.Text;
                     ListaCaja.Items[idItem] = TbCuil.Text;
+                    ListaCajaPDF.Items[idItem] = url;
 
-                    string[] cambios = { };
-                    if (email != TbEmail.Text)
-                    {
-                        cambios.Append(TbNombre.Name);
-                    }
-                    else if (nombre != TbNombre.Text)
-                    {
-                        cambios.Append(TbCuil.Name);
-                    }
-                    else if (cuil != TbCuil.Text)
-                    {
-                        cambios.Append(TbEmail.Name);
-                    }
+                    MessageBox.Show(nombre + "se actualizo correctamente.");
 
+                    TbCuil.Text = string.Empty;
+                    TbEmail.Text = string.Empty;
+                    TbNombre.Text = string.Empty;
+                    TbDeuda.Text = string.Empty;
 
-
-
-                    MessageBox.Show("Se han actualizado los datos de '" + cambios  + "'.");
                 }
                 else
                 {
-                    MessageBox.Show("No podemos dejar la descripcion vacia.");
+                    MessageBox.Show("No podemos dejar un campo vacio.");
                 }
             }
             else
             {
-                MessageBox.Show("Ingrese un codigo válido.");
+                MessageBox.Show("Ingrese un cuil válido.");
             }
         }
 
@@ -230,7 +242,10 @@ namespace Presentacion
                     TbCuil.Text = ListaCaja.Items[idItem].ToString();
                     TbNombre.Text = ListaCajaNombre.Items[idItem].ToString();
                     TbEmail.Text = ListaCajaEmail.Items[idItem].ToString();
-                   
+                    string url = ListaCajaPDF.Items[idItem].ToString();
+                    string baseUrl = "http://localhost:3000/notificacion-deuda-pdf?cuil=" + TbCuil.Text + "&idDeuda=";
+                    TbDeuda.Text = url.Replace(baseUrl, "");
+
 
                     label6.Text = indices.Count.ToString();
                 }
@@ -270,7 +285,8 @@ namespace Presentacion
 
                             label6.Text = indices.Count.ToString();
                         }
-                        else{
+                        else
+                        {
                             MessageBox.Show("No se ha encontrado ningún resultado.");
                             label6.Text = "0";
 
@@ -324,7 +340,7 @@ namespace Presentacion
                             string cuil = ListaCaja.Items[i].ToString();
                             string nombre = ListaCajaNombre.Items[i].ToString();
                             string email = ListaCajaEmail.Items[i].ToString();
-                            string pdf =ListaCajaPDF.Items[i].ToString();
+                            string pdf = ListaCajaPDF.Items[i].ToString();
                             escritor.WriteLine($"{cuil},{nombre},{email},{pdf}");
                         }
                     }
@@ -338,7 +354,7 @@ namespace Presentacion
         {
 
         }
-
+        /*
         private void BtnPdf_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -358,6 +374,8 @@ namespace Presentacion
                 MessageBox.Show("Seleccionaste: " + rutaArchivo);
             }
         }
+        */
+
 
         private void ImportarBoton_Click(object sender, EventArgs e)
         {
@@ -507,5 +525,39 @@ namespace Presentacion
         {
             this.Close();
         }
+
+        private void ListaCajaPDF_DoubleClick(object sender, EventArgs e)
+        {
+            int indexSeleccionado = ListaCajaPDF.SelectedIndex;
+            if (indexSeleccionado != ListBox.NoMatches)
+            {
+                string link = ListaCajaPDF.Items[indexSeleccionado].ToString();
+
+                // Validar que sea un link válido
+                if (Uri.IsWellFormedUriString(link, UriKind.Absolute))
+                {
+                    try
+                    {
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = link,
+                            UseShellExecute = true
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se pudo abrir el enlace: " + ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El texto seleccionado no es un enlace válido.");
+                }
+            }
+        }
+
     }
+
+
+
 }

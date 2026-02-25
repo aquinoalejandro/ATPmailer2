@@ -4,7 +4,7 @@ import fs from 'fs';
 // 1. Simulación de obtención de datos (reemplazar con llamada real a ws_estadodeuda)
 // ----------------------------------------------------------------------
 export async function getDeudaData(contribuyenteId) {
-  // Datos de ejemplo – en tu caso vendrán del servicio o base de datos
+  // Datos de ejemplo – en nuestro caso vendrán del servicio o base de datos
     return [
         {
         DGROBLI11_FECHAVTODDJJ: "2023/05/10",
